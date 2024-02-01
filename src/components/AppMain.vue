@@ -11,7 +11,7 @@ export default {
   },
   created() {
     axios.get(`${this.baseUrl}/api/projects`).then((resp) => {
-      this.projects = resp.data.results;
+      this.projects = resp.data.result;
     });
   },
   components: { ProjectCards },
@@ -22,7 +22,7 @@ export default {
   <div class="container">
     <h2 class="text-center py-5 text-uppercase">Project List</h2>
 
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
       <div class="col" v-for="project in projects" :key="project.id">
         <ProjectCards :project="project" />
       </div>
