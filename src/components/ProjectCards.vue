@@ -7,10 +7,13 @@
       return {}
     },
     computed: {
-      truncadetext() {
+
+      truncateText() {
+
         if (this.project.content && this.project.content.length > 250) {
           return this.project.content.substring(0, 125) + "...";
         }
+        return this.project.content;
       }
       
     }
@@ -20,7 +23,10 @@
 <template>
 <div class="card h-100">
   <div class="card-body">
+
     <h5>{{ project.title }}</h5>
+    <p>{{ truncateText }}</p>
+    
   </div>
 </div>
 </template>
