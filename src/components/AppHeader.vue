@@ -1,7 +1,22 @@
 <script>
   export default {
     data() {
-      return {}
+      return {
+        links : [
+          {
+            name: 'home',
+            title: 'Home'
+          },
+          {
+            name: 'about',
+            title: 'About',
+          },
+          {
+            name: 'contact',
+            title: 'Contact me!!'
+          }
+        ]
+      }
     }
   }
 </script>
@@ -23,8 +38,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="ms-auto navbar-nav">
-          <li class="nav-item">
-            <a href="">Home</a>
+          <li class="nav-item" v-for="link in links" :key="link.title">
+            <router-link :to="{ name: link.name }" class="nav-link">
+              {{ link.title }}
+            </router-link>
           </li>
         </ul>
       </div>
