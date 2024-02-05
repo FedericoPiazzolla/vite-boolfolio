@@ -25,8 +25,11 @@
   <div class="card-body">
 
     <h5>{{ project.title }}</h5>
+    <span>Technologies: {{ project.technology ? project.technology.name : "No technology asigned" }}</span>
+
     <p>{{ truncateText }}</p>
     
+    <router-link :to="{name: 'single-project', params: {slug: project.slug}}">Open</router-link>  
   </div>
 </div>
 </template>

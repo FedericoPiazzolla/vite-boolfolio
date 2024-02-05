@@ -11,7 +11,7 @@ export default {
   },
   created() {
     axios.get(`${this.baseUrl}/api/projects`).then((resp) => {
-      this.projects = resp.data.result;
+      this.projects = resp.data.results;
     });
   },
   components: { ProjectCards },

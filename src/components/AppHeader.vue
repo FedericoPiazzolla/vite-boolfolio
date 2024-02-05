@@ -13,8 +13,8 @@
           },
           {
             name: 'contact',
-            title: 'Contact me!!'
-          }
+            title: 'Contact me!!',
+          },
         ]
       }
     }
